@@ -1,0 +1,165 @@
+body {
+    background-color: #EEF9FC;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* 使用flex布局，并设置方向为列 */
+    display: flex;
+    flex-direction: column;
+    /* 确保body至少与视口等高 */
+    min-height: 100vh;
+}
+ 
+.container {
+    width: 90%; /* 根据手机屏幕宽度自适应 */
+    max-width: 500px; /* 设置最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+    /* 可根据需要添加内边距或外边距 */
+    padding: 10px;
+    box-sizing: border-box; /* 确保内边距和边框不会增加元素的总宽度 */
+}
+ 
+/* 设置.banner始终位于页面底部 */
+.banner {
+    position: fixed; /* 固定定位 */
+    bottom: 0; /* 紧贴页面底部 */
+    left: 0; /* 紧贴页面左侧 */
+    width: 100%; /* 宽度覆盖整个页面 */
+    color: #999999; /* 文字颜色 */
+    text-align: center; /* 文字居中 */
+    padding: 2px 0; /* 内边距，确保文字不紧贴边框 */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* 可选：添加阴影效果 */
+    /* 可选：为.banner添加z-index，确保其位于其他内容之上 */
+    z-index: 1000;
+}
+h1 {
+    font-size: 5vw; /* 字体大小根据视口宽度变化 */
+    
+    margin: 20px 0; /* 增加上下间距 */
+}
+
+button {
+    font-size: 4vw; /* 字体大小根据视口宽度变化 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+#yes {
+     background: linear-gradient(90deg, rgb(255, 119, 0), rgb(255, 73, 0));
+    color: white;
+}
+
+#no {
+    background: linear-gradient(90deg, rgb(93, 206, 232), rgb(78, 159, 231));
+        border-color: #ffffff;
+    color: white;
+    position: relative;
+	white-space: nowrap;    /* 防止换行 */
+
+}
+
+.yes-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:#EEF9FC; /* 粉色 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.yes-text {
+    font-size: 7vw; /* 字体大小根据视口宽度变化 */
+}
+
+.yes-image {
+    width: 50%; /* 图片宽度自适应容器 */
+    max-width: 300px; /* 最大宽度限制 */
+}
+
+.yes-text-h2 {
+    font-size: 2vw; /* H2 的字体大小 */
+    color: #c1c1c1; /* H2 的文本颜色 */
+}
+.yes-link {
+    font-size: 2vw; /* 链接的字体大小 */
+    color: #fb9595; /* 链接的颜色，淡色 */
+    text-decoration: none; /* 去掉下划线 */
+    transition: color 0.3s; /* 添加过渡效果 */
+}
+.yes-link:hover {
+    color: #555; /* 悬停时的颜色 */
+}
+
+/* 电脑端样式优化 */
+@media (min-width: 768px) {
+    body {
+        display: block;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        max-width: none;
+    }
+
+    #mainImage {
+        width: 250px; /* 固定图片宽度 */
+    }
+
+    h1 {
+        font-size: 28px; /* 固定字体大小 */
+        margin: 20px 0;
+    }
+    
+    h2 {
+        font-size: 14px; /* 固定字体大小 */
+        margin: 20px 0;
+    }
+
+    button {
+        font-size: 18px; /* 固定字体大小 */
+    }
+
+    .yes-text {
+        font-size: 36px; /* 固定字体大小 */
+    }
+
+    .yes-image {
+        width: 300px; /* 固定图片宽度 */
+    }
+}
+
+/* 其他样式保持不变 */
+
+#copyLinkButton {
+    position: fixed;
+    bottom: 20px; /* 距离底部20px */
+    right: 20px; /* 距离右边20px */
+    background-color: #6784b1; /* 蓝色 */
+    color: white;
+    border: none;
+    border-radius: 5px; /* 圆形按钮 */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px; /* 图标大小 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#copyLinkButton:hover {
+    background-color: #5a6f9e; /* 深蓝色，鼠标悬停时的颜色 */
+    transform: scale(1.05); /* 鼠标悬停时放大效果 */
+}
+
